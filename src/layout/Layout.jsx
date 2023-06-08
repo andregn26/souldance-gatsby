@@ -1,9 +1,10 @@
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 //material Ui
 import { CssBaseline, ThemeProvider } from "@mui/material"
 import { ThemeProvider as StyledThemeProvider } from "styled-components"
 import themeSettings from "../theme"
+//components
+import NavigationHeader from "../components/NavigationHeader"
 
 const Layout = ({ children }) => {
   const theme = themeSettings
@@ -11,7 +12,10 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+        <StyledThemeProvider theme={theme}>
+          <NavigationHeader />
+          {children}
+        </StyledThemeProvider>
       </ThemeProvider>
     </>
   )
