@@ -2,162 +2,123 @@ import { createTheme } from "@mui/material"
 
 // color design tokens export
 const tokensDark = {
-    grey: {
-        0: "#ffffff", // manually adjusted
-        100: "#f6f6f6",
-        200: "#ededed",
-        300: "#e3e3e3",
-        400: "#dadada",
-        500: "#d1d1d1",
-        600: "#a7a7a7",
-        700: "#7d7d7d",
-        800: "#545454",
-        900: "#2a2a2a",
-        1000: "#252422",
-        1100: "#1e1d1b",
-        1200: "#161614",
-        1300: "#0f0e0e",
-        1400: "#070707"
-    },
-    orange: {
-        100: "#ffd9cc",
-        200: "#ffb399",
-        300: "#ff8e66",
-        400: "#ff6833",
-        500: "#ff4200",
-        600: "#cc3500",
-        700: "#992800",
-        800: "#661a00",
-        900: "#330d00"
-    },
-
-    blue: {
-        100: "#d2ecff",
-        200: "#a5d8ff",
-        300: "#79c5ff",
-        400: "#4cb1ff",
-        500: "#1f9eff",
-        600: "#197ecc",
-        700: "#135f99",
-        800: "#0c3f66",
-        900: "#062033"
-    },
+  grey: {
+    0: "#ffffff", // manually adjusted
+    100: "#f6f6f6",
+    200: "#ededed",
+    300: "#e3e3e3",
+    400: "#dadada",
+    500: "#d1d1d1",
+    600: "#a7a7a7",
+    700: "#7d7d7d",
+    800: "#545454",
+    900: "#2a2a2a",
+    1000: "#252422",
+    1100: "#1e1d1b",
+    1200: "#161614",
+    1300: "#0f0e0e",
+    1400: "#070707",
+    1500: "#000000",
+  },
+  primary: {
+    100: "#ebe1f5",
+    200: "#d6c3ec",
+    300: "#c2a5e2",
+    400: "#B18DDA", //manually adjusted
+    500: "#9969cf",
+    600: "#69488D", //manually adjusted
+    700: "#5c3f7c",
+    800: "#3d2a53",
+    900: "#1f1529",
+  },
+  blue: {
+    100: "#d2ecff",
+    200: "#a5d8ff",
+    300: "#79c5ff",
+    400: "#4cb1ff",
+    500: "#1f9eff",
+    600: "#197ecc",
+    700: "#135f99",
+    800: "#0c3f66",
+    900: "#062033",
+  },
 }
 
+const mainFont = "'Barlow', sans-serif;"
 
 // mui theme settings
 //Colors
-let themeSettings = createTheme(
-    {
-        palette: {
-            mode: "dark",
-            // palette values for dark mode
-            primary: {
-                ...tokensDark.orange,
-                default: tokensDark.orange[500],
-                lighter: tokensDark.orange[100],
-                light: tokensDark.orange[200],
-                main: tokensDark.orange[500],
-                dark: tokensDark.orange[800],
-                darker: tokensDark.orange[900],
-            },
-            secondary: {
-                ...tokensDark.blue,
-                default: tokensDark.blue[500],
-                lighter: tokensDark.blue[100],
-                light: tokensDark.blue[200],
-                main: tokensDark.blue[500],
-                dark: tokensDark.blue[800],
-                darker: tokensDark.blue[900],
-            },
-            neutral: {
-                ...tokensDark.grey,
-                default: tokensDark.grey[500],
-                fullLight: tokensDark.grey[0],
-                lighter: tokensDark.grey[100],
-                light: tokensDark.grey[300],
-                main: tokensDark.grey[500],
-                dark: tokensDark.grey[800],
-                darker: tokensDark.grey[1000],
-                fullDark: tokensDark.grey[1300],
-            },
-            text: {
-                ...tokensDark.grey,
-                primary: tokensDark.grey[100],
-                secondary: tokensDark.grey[100],
-                disabled: tokensDark.grey[100],
-            },
-            action: {
-                active: tokensDark.orange[500],
-                hover: tokensDark.orange[500],
-                selected: tokensDark.orange[500],
-                disabled: tokensDark.grey[100],
-                focus: tokensDark.grey[100],
-            }
-        },
-    }
-)
-//Typography
-
-const font1 = "'Lato', sans-serif;"
-const font2 = "'Oswald', sans-serif;"
-
-themeSettings = createTheme(themeSettings, {
-    typography: {
-        fontFamily: font1,
-        fontSize: 'var(--fs-base)',
-        fs6xl: {
-            fontFamily: font2,
-            fontSize: 'var(--fs-6xl)',
-        },
-        fs5xl: {
-            fontFamily: font2,
-            fontSize: 'var(--fs-5xl)',
-        },
-        h1: {
-            fontFamily: font2,
-            fontSize: 'var(--fs-4xl)',
-        },
-        h2: {
-            fontFamily: font2,
-            fontSize: 'var(--fs-xxxl)',
-        },
-        h3: {
-            fontFamily: font2,
-            fontSize: 'var(--fs-xxl)',
-        },
-        h4: {
-            fontFamily: font2,
-            fontSize: 'var(--fs-xl)',
-        },
-        h5: {
-            fontFamily: font1,
-            fontSize: 'var(--fs-lg)',
-        },
-        h6: {
-            fontFamily: font1,
-            fontSize: 'var(--fs-md)',
-        },
-        body1: {
-            fontFamily: font1,
-            fontSize: 'var(--fs-base)',
-        },
-        body2: {
-            fontFamily: font1,
-            fontSize: 'var(--fs-sm)',
-        },
+let themeSettings = createTheme({
+  palette: {
+    mode: "dark",
+    // palette values for dark mode
+    // background: {
+    // ...tokensDark.grey,
+    //   default: "#121212",
+    //   paper: "#121212",
+    // },
+    text: {
+      ...tokensDark.grey,
+      primary: "#fff",
+      secondary: "rgba(255, 255, 255, 0.7)",
+      disabled: "rgba(255, 255, 255, 0.5)",
+      hint: "#9b93c7",
     },
-    components: {
-        MuiTypography: {
-            defaultProps: {
-                variantMapping: {
-                    // Map the new variant to render a <span> by default
-                    fs5xl: 'p',
-                    fs6xl: "p",
-                },
-            },
-        },
+    primary: {
+      ...tokensDark.primary,
+      light: tokensDark.primary[400],
+      main: tokensDark.primary[500],
+      dark: tokensDark.primary[600],
     },
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 568, //small mobile
+      md: 768, // mobile
+      lg: 1024, //tablet
+      xl: 1280, // laptop
+      xxl: 1536, //desktop
+    },
+    unit: "px",
+  },
+  typography: {
+    fontFamily: mainFont,
+    fontSize: "var(--fs-base)",
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 700,
+    htmlFontSize: 16,
+    h1: {
+      fontFamily: "inherit",
+      fontSize: "var(--fs-xxl)",
+      fontWeight: 400,
+    },
+  },
 })
 
 export default themeSettings
+
+// const theme = useTheme()
+
+// const isSmallMobile = useMediaQuery(theme.breakpoints.down("sm"))
+// const isNonSmallMobile = useMediaQuery(theme.breakpoints.up("sm"))
+
+// const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+// const isOnlyMobile = useMediaQuery(theme.breakpoints.between("sm", "md"))
+// const isNonMobile = useMediaQuery(theme.breakpoints.up("md"))
+
+// const isTablet = useMediaQuery(theme.breakpoints.down("lg"))
+// const isOnlyTablet = useMediaQuery(theme.breakpoints.between("md", "lg"))
+// const isNonTablet = useMediaQuery(theme.breakpoints.up("lg"))
+
+// const isLaptop = useMediaQuery(theme.breakpoints.down("xl"))
+// const isOnlyLaptop = useMediaQuery(theme.breakpoints.between("lg", "xl"))
+// const isNonLaptop = useMediaQuery(theme.breakpoints.up("xl"))
+
+// const isDesktop = useMediaQuery(theme.breakpoints.down("xxl"))
+// const isOnlyLaptop = useMediaQuery(theme.breakpoints.between("xl", "xxl"))
+// const isNonLaptop = useMediaQuery(theme.breakpoints.up("xxl"))
+
+// const isOnlyLargeDesktop = useMediaQuery(theme.breakpoints.up("xxl"))

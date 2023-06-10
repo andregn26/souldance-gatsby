@@ -1,23 +1,41 @@
 import * as React from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Divider from "@mui/material/Divider"
-import Drawer from "@mui/material/Drawer"
-import IconButton from "@mui/material/IconButton"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemText from "@mui/material/ListItemText"
+//Material UI
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  Divider,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Button,
+  Typography,
+  useScrollTrigger,
+} from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu"
-import Toolbar from "@mui/material/Toolbar"
-import Typography from "@mui/material/Typography"
-import Button from "@mui/material/Button"
 import CloseIcon from "@mui/icons-material/Close"
 
 const drawerWidth = "100%"
 const navItems = ["Home", "About", "Contact"]
 
-function NavigationHeader(props) {
+function ElevationScroll(props) {
+  const { children, window } = props
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  })
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 0 : 0,
+    color: trigger ? "default" : "transparent",
+  })
+}
+
+export default function NavigationHeader(props) {
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
 
@@ -49,34 +67,36 @@ function NavigationHeader(props) {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar component="nav">
-        <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: "block" }}
-          >
-            MUI
-          </Typography>
-          {/* Open drawer Button --> ONLY IN MOBILE */}
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map(item => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
+      <ElevationScroll>
+        <AppBar component="nav">
+          <Toolbar>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, display: "block" }}
+            >
+              MUI
+            </Typography>
+            {/* Open drawer Button --> ONLY IN MOBILE */}
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map(item => (
+                <Button key={item} sx={{ color: "#fff" }}>
+                  {item}
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
       <Box component="nav">
         <Drawer
           container={container}
@@ -140,5 +160,3 @@ function NavigationHeader(props) {
     </Box>
   )
 }
-
-export default NavigationHeader

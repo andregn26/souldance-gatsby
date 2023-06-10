@@ -1,13 +1,15 @@
 import * as React from "react"
-
 import Layout from "../layout/Layout"
 import Seo from "../layout/Seo"
 import "./index.css"
 import { Box } from "@mui/material"
+import Hero from "../components/Homepage/Hero"
 
 const IndexPage = () => (
   <Layout>
-    <Box sx={{ padding: "10rem" }}>Esta é a página principal</Box>
+    <Box sx={{ padding: "10rem" }}>
+      <Hero />
+    </Box>
   </Layout>
 )
 
