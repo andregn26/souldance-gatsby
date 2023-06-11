@@ -1,1 +1,38 @@
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1200,16,1.25,5,2,1536&s=,1.5|2|3|4|5|6,m-4xl&g=s,l,xl,12 */
 
+:root {
+  --space-s: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
+  --space-m: clamp(1.50rem, calc(1.50rem + 0.00vw), 1.50rem);
+  --space-l: clamp(2.00rem, calc(2.00rem + 0.00vw), 2.00rem);
+  --space-xl: clamp(3.00rem, calc(3.00rem + 0.00vw), 3.00rem);
+  --space-2xl: clamp(4.00rem, calc(4.00rem + 0.00vw), 4.00rem);
+  --space-3xl: clamp(5.00rem, calc(5.00rem + 0.00vw), 5.00rem);
+  --space-4xl: clamp(6.00rem, calc(6.00rem + 0.00vw), 6.00rem);
+
+  /* One-up pairs */
+  --space-s-m: clamp(1.00rem, calc(0.82rem + 0.91vw), 1.50rem);
+  --space-m-l: clamp(1.50rem, calc(1.32rem + 0.91vw), 2.00rem);
+  --space-l-xl: clamp(2.00rem, calc(1.64rem + 1.82vw), 3.00rem);
+  --space-xl-2xl: clamp(3.00rem, calc(2.64rem + 1.82vw), 4.00rem);
+  --space-2xl-3xl: clamp(4.00rem, calc(3.64rem + 1.82vw), 5.00rem);
+  --space-3xl-4xl: clamp(5.00rem, calc(4.64rem + 1.82vw), 6.00rem);
+
+  /* Custom pairs */
+  --space-m-2xl: clamp(1.50rem, calc(0.59rem + 4.55vw), 4.00rem);
+}
+
+
+
+a {
+        color: inherit; /* blue colors for links too */
+        text-decoration: inherit; /* no underline */
+      }
+
+a:hover {
+  color: orange ;
+}
+
+.a-active {
+  color: orangered;
+
+}

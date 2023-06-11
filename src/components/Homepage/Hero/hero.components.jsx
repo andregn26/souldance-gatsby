@@ -11,12 +11,30 @@ export const HeroWrapper = ({ children }) => {
       display="flex"
       flexDirection="column"
       justifyContent="center"
-      height={isNonMobile ? "85vh" : "100svh"}
+      height={isNonMobile ? "100svh" : "100svh"}
     >
       {children}
     </Box>
   )
 }
+
+export const BackgroundImage = () => (
+  <StaticImage
+    src="../../../images/hero-homepage-beautiful-passionate-dancers.jpg"
+    alt="example"
+    placeholder="blurred"
+    layout="fullWidth"
+    webpOptions={{ quality: 100 }}
+    objectPosition=" 55% 60% "
+    style={{
+      position: "absolute",
+      top: "0",
+      left: "0",
+      height: "100%",
+      width: "100%",
+    }}
+  />
+)
 
 export const HeroAbsoluteWrapper = ({ children }) => {
   return (
@@ -34,21 +52,3 @@ export const HeroAbsoluteWrapper = ({ children }) => {
     </Box>
   )
 }
-
-export const BackgroundImage = () => (
-  <StaticImage
-    src="../../../images/hero-homepage-beautiful-passionate-dancers.jpg"
-    alt="example"
-    placeholder="blurred"
-    layout="fullWidth"
-    webpOptions={{ quality: 100 }}
-    objectPosition=" center 40% "
-    style={{
-      position: "absolute",
-      top: "0",
-      left: "0",
-      height: "100%",
-      width: "100%",
-    }}
-  />
-)

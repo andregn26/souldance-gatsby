@@ -18,9 +18,11 @@
     "gatsby-transformer-sharp": "^5.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.44.3",
     "styled-components": "^5.3.11"
   },
   "devDependencies": {
+    "@hookform/devtools": "^4.3.1",
     "prettier": "^2.8.8"
   },
   "keywords": [
