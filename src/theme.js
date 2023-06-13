@@ -70,6 +70,12 @@ let themeSettings = createTheme({
       main: tokensDark.primary[500],
       dark: tokensDark.primary[600],
     },
+    grey: {
+      ...tokensDark.grey,
+      light: tokensDark.grey[400],
+      main: tokensDark.grey[500],
+      dark: tokensDark.grey[600],
+    },
   },
   breakpoints: {
     values: {

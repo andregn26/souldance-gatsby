@@ -13,15 +13,13 @@ import React from "react"
 import { StyledContainerSection } from "../../helpers/Containers"
 import { useForm } from "react-hook-form"
 import { DevTool } from "@hookform/devtools"
+import SelectClass from "./SelectClass"
+import TextFieldName from "./TextFieldName"
+import TextFieldEmail from "./TextFieldEmail"
 
 const Form = () => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
-  const [age, setAge] = React.useState("")
-
-  const handleChange = event => {
-    setAge(event.target.value)
-  }
   const form = useForm({
     defaultValues: {
       aula: "",
@@ -52,41 +50,16 @@ const Form = () => {
               : {
                   display: "grid",
                   gridTemplateRows: "1fr",
-                  gridTemplateColumns: "repeat(5, 1fr)",
+                  gridTemplateColumns: "repeat(4, 1fr)",
                   gap: "0px 3em ",
                   justifyItems: "center",
-                  alignItems: "center",
+                  alignItems: "start",
                 }
           }
         >
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
-            label="Age"
-            onChange={handleChange}
-          >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
-          </Select>
-          <TextField
-            label="Nome"
-            type="text"
-            fullWidth
-            {...register("nome", { required: "Campo obrigatório" })}
-            error={!!errors.nome}
-            //     helperText={errors.nome.message}
-          />
-          <TextField
-            label="Email"
-            type="email"
-            fullWidth
-            {...register("email", { required: "Campo obrigatório" })}
-            error={!!errors.email}
-            helperText={errors.email?.message}
-          />
+          <SelectClass register={register} errors={errors} />
+          <TextFieldName register={register} errors={errors} />
+          <TextFieldEmail register={register} errors={errors} />
           <Button type="submit" variant="contained" fullWidth>
             Submit
           </Button>

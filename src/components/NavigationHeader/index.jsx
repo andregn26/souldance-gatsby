@@ -86,7 +86,10 @@ export default function NavigationHeader(props) {
           <Toolbar>
             <StyledContainerSection definePadding="0">
               {" "}
-              <StyledContainer83 definePadding="0" defineMaxWidth={"1500px"}>
+              <StyledContainer83
+                definePadding="0 var(--space-s-l)"
+                defineMaxWidth={"1700px"}
+              >
                 <StyledFlexBetween defineAlignItems={"center"}>
                   <Typography
                     variant="h6"
@@ -101,7 +104,7 @@ export default function NavigationHeader(props) {
                     aria-label="open drawer"
                     edge="start"
                     onClick={handleDrawerToggle}
-                    sx={{ mr: 2, display: { sm: "none" } }}
+                    sx={{ display: { sm: "none" } }}
                   >
                     <MenuIcon />
                   </IconButton>
@@ -110,6 +113,7 @@ export default function NavigationHeader(props) {
                   >
                     {navItems3.map(item => (
                       <Link
+                        isD
                         key={item.linkIndex}
                         to={item.link}
                         activeClassName="a-active"

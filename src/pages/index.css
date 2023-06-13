@@ -1,4 +1,4 @@
-/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1200,16,1.25,5,2,1536&s=,1.5|2|3|4|5|6,m-4xl&g=s,l,xl,12 */
+/* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1200,16,1.25,5,2,1536&s=0.75|0.5|0.25,1.5|2|3|4|5|6,m-2xl|s-l&g=s,l,xl,12 */
 
 :root {
   --space-s: clamp(1.00rem, calc(1.00rem + 0.00vw), 1.00rem);
@@ -19,6 +19,25 @@
 
   /* Custom pairs */
   --space-m-2xl: clamp(1.50rem, calc(0.59rem + 4.55vw), 4.00rem);
+  --space-s-l: clamp(1.00rem, calc(0.64rem + 1.82vw), 2.00rem);
+}
+
+/* @link https://utopia.fyi/type/calculator?c=320,15,1.2,1200,17,1.25,10,2,1536&s=0.75|0.5|0.25,1.5|2|3|4|5|6,m-2xl|s-l&g=s,l,xl,12 */
+
+:root {
+  --step--2: clamp(0.65rem, calc(0.64rem + 0.05vw), 0.68rem);
+  --step--1: clamp(0.78rem, calc(0.76rem + 0.13vw), 0.85rem);
+  --step-0: clamp(0.94rem, calc(0.89rem + 0.23vw), 1.06rem);
+  --step-1: clamp(1.13rem, calc(1.05rem + 0.37vw), 1.33rem);
+  --step-2: clamp(1.35rem, calc(1.24rem + 0.56vw), 1.66rem);
+  --step-3: clamp(1.62rem, calc(1.45rem + 0.83vw), 2.08rem);
+  --step-4: clamp(1.94rem, calc(1.71rem + 1.18vw), 2.59rem);
+  --step-5: clamp(2.33rem, calc(2.00rem + 1.65vw), 3.24rem);
+  --step-6: clamp(2.80rem, calc(2.34rem + 2.28vw), 4.05rem);
+  --step-7: clamp(3.36rem, calc(2.74rem + 3.10vw), 5.07rem);
+  --step-8: clamp(4.03rem, calc(3.19rem + 4.19vw), 6.33rem);
+  --step-9: clamp(4.84rem, calc(3.72rem + 5.60vw), 7.92rem);
+  --step-10: clamp(5.81rem, calc(4.32rem + 7.44vw), 9.90rem);
 }
 
 
@@ -35,4 +54,12 @@ a:hover {
 .a-active {
   color: orangered;
 
+}
+
+.css-rg0zff-MuiToolbar-root {
+  padding: 0 !important;
+}
+
+.css-dh4d3v-MuiButtonBase-root-MuiButton-root {
+  padding: 16.5px 14px !important;
 }
