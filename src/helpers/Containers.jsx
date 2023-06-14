@@ -10,7 +10,7 @@ export const StyledContainerSection = ({
   return (
     <Box
       width="100%"
-      // border="2px solid red"
+      border="2px solid red"
       maxWidth={defineMaxWidth || "100%"}
       m="0 auto"
       padding={definePadding || "var(--space-m-2xl)"}
@@ -28,7 +28,7 @@ export const StyledContainer83 = ({
 }) => {
   return (
     <Box
-      // border="2px solid lime"
+      border="2px solid blue"
       padding={definePadding || "var(--space-m-2xl)"}
       maxWidth={defineMaxWidth || "1500px"}
       m="0 auto"
@@ -42,7 +42,7 @@ export const StyledPaper = ({ children, defineMaxWidth, definePadding }) => {
   return (
     <Paper
       sx={{
-        // border: "6px solid yellow",
+        border: "6px solid yellow",
         padding: definePadding ? `${definePadding}` : "var(--space-m-2xl)",
         maxWidth: defineMaxWidth ? `${defineMaxWidth}` : "1500px",
         m: "0 auto",
